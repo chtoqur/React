@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    
+    function add(a, b)
+    {
+        return a + b;
+    }
+
+    function hof(callbackProc)
+    {
+        // HOF는 콜백 함수의 spec을 미리 알고 있어야 한다.
+        // cf. spec : 파라미터 개수 등
+        return callbackProc(10, 20);
+    }
+
+    console.log(hof(add));
+    // hof(10);
+    // hof({name:'홍길동'});
+    // hof([10, 20, 30]);
+
+    const myFunction = function(value, index, array) {
+
+        console.log(value);
+        console.log(index);
+        console.log(array);
+
+    }
+
+    let a = [11, 22];
+
+    a.forEach(myFunction);
+
+    // const forEach2 = function(proc)
+    // {
+    //     for (let i = 0; i < a.length; i++)
+    //     {
+    //         proc();
+    //     }
+    // }
+
+    // a.forEach
+
+
+
+
+</script>
+</body>
+</html>

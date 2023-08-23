@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    
+    function add(a, b)
+    {
+        // call by reference
+        // 참조변수를 통해서 변수를 변경하는 경우
+        // 변수의 불변성이 적용되지 않음
+        a.data = 20;
+        return a.data + b.data;
+    }
+
+    let val1 = { data : 10 };
+    let val2 = { data : 20 };
+
+    console.log(val1);
+    console.log(add(val1, val2));
+    console.log(val1);
+
+
+
+
+</script>
+</body>
+</html>

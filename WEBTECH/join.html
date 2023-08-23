@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    
+    // 아이디가 있는지 검사한다.
+    // 아이디가 존재하지 않으면 회원가입을 진행한다.
+    // (아이디가 존재한다면 회원가입이 불가능하다.)
+
+    let id = 'jsh';
+
+    const existId = function(id)
+    {
+        // ID가 DB에 존재하면 true
+        // 그렇지 않다면 false를 리턴한다.
+        console.log(`DB 검색결과: 해당하는 아이디가 없습니다. ${id}`);
+        return false;   // DB에 없는 경우 (Test Stub)
+    }
+
+    const join = function(id)
+    {
+        console.log(`${id} 회원가입 완료`);
+    }
+
+    const memberJoin = function(id)
+    {
+        if(false == existId(id))
+        {
+            join(id);
+        }
+    }
+
+    const join2 = function(cbExistId, id)
+    {
+        if(false == existId(id))
+        {
+            console.log(`${id} : 회원가입 완료`);
+        }
+    }
+
+    join2(existId, id);
+
+</script>
+</body>
+</html>

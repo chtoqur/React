@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    
+    // 객체를 생성하는 두 가지 방법
+
+    // 1. 객체 할당 : 객체 리터럴
+    let a = {
+        name : '연홍시',
+        age : 3,
+        getName : function() {
+            return this.name;
+        },
+        getAge : function() {
+            return a.age;
+        }
+    }
+
+    // cf. 배열 리터럴
+    let aa = ['나왕돈', 3]
+
+    // 2. 객체 할당 : new 연산자를 사용
+    let b = new Object();
+    b.name = '나왕돈';
+    b.age = 3;
+
+    // 3. 객체 할당 : 생성자 함수를 이용하기
+    let c = new function(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+    
+    // 이 때 this는 실행코드를 품고 있는 객체
+
+    c.name = '강아지고양이';
+    c.age = 1004;
+
+    function Friend (name, age) {
+
+        // new를 붙이지 않고 호출하는 것을 방지해줌
+        if (false === (this instanceof Friend))
+        {
+            throw new Error("Friend function must be called with new opration.");
+        }
+
+        this.name = name;
+        this.age = age;
+    }
+
+    let d = new Friend('새우', 79);
+
+    console.log(a);
+    console.log(b);
+    console.log(c);
+    console.log(d);
+    
+
+</script>
+</body>
+</html>
